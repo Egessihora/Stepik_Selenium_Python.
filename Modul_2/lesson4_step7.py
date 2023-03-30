@@ -1,10 +1,5 @@
 # MODUL 4. LESSON 4. TASK 7
 
-# Открыть страницу http://suninjuly.github.io/explicit_wait2.html
-# Дождаться, когда цена дома уменьшится до $100 (ожидание нужно установить не меньше 12 секунд)
-# Нажать на кнопку "Book"
-# Решить математическую задачу и отправить решение.
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -29,3 +24,8 @@ try:
 finally:
     time.sleep(2)
     browser.quit()
+    
+# Чтобы тест был надежным, нам нужно не только найти кнопку на странице, но и дождаться, когда кнопка станет кликабельной.
+# Для реализации подобных ожиданий в Selenium WebDriver существует понятие явных ожиданий (Explicit Waits),
+# которые позволяют задать специальное ожидание для конкретного элемента.
+# Задание явных ожиданий реализуется с помощью инструментов WebDriverWait и expected_conditions.
